@@ -18,11 +18,7 @@ namespace SiControleCaixa.Application.NET7.Tests
         public static IServiceProvider Configure()
         {
             var services = new ServiceCollection();
-
-            services.AddScoped<ITransactionService, TransactionService>();
-            services.AddScoped<ITransacaoRepository, TransacaoRepository>();
-            services.AddScoped<SiControleCaixaSqlContext>();
-
+            SiControleCaixa.ApplicationCore.IoC.Startup.RegisterServices(services);
             return services.BuildServiceProvider();
         }
     }

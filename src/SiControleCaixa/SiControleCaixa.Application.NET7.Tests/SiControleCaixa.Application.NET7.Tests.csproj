@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SiControleCaixa.ApplicationCore.BusinessServices\SiControleCaixa.ApplicationCore.BusinessServices.csproj" />
+    <ProjectReference Include="..\SiControleCaixa.Core.IoC\SiControleCaixa.ApplicationCore.IoC.csproj" />
   </ItemGroup>
 
 </Project>
