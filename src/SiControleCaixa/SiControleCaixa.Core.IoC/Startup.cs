@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SiControleCaixa.ApplicationCore.BusinessServices.Interfaces;
 using SiControleCaixa.ApplicationCore.BusinessServices.Services;
+using SiControleCaixa.Infrastructure.Data.Context;
 using SiControleCaixa.Infrastructure.Data.Repository.Interfaces;
 using SiControleCaixa.Infrastructure.Data.Repository.Repositories;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace SiControleCaixa.ApplicationCore.IoC
 			{ 
                 services.AddScoped<ITransactionService, TransactionService>();
                 services.AddScoped<ITransacaoRepository, TransacaoRepository>();
-                
+                services.AddScoped<SiControleCaixaSqlContext>();
 
             }
 			catch (Exception)

@@ -10,6 +10,13 @@ using System.Threading.Tasks;
 
 namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
 {
+    /// <summary>
+    ///  Foi aplicado junto a implementação os seguintes princípios:
+    ///  Single Responsibility Principle (SRP): onde a TransactionService 
+    ///  única responsabilidade principal, que é fornecer serviços relacionados a transações de fluxo de caixa
+    ///  Open/Closed Principle (OCP): onde a propria classe está fechada a modificações,podendo ser somente alterado algo (OPEN) através da criação de novos métodos onde não permite modificiação do comportamento.
+    ///  E por fim Dependency Inversion Principle (DIP), onde aplico Injeção de depêndencia em todo projeto(nota que é injetado no construtor)
+    /// </summary>
     public class TransactionService : ITransactionService
     {
         protected ITransacaoRepository _transacaoRepository;
@@ -18,7 +25,15 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             _transacaoRepository = transacaoRepository;
         }
 
-
+        /// <summary>
+        /// Método responsável por consolidar as informções
+        /// A princípio a propriedade TipoTransacao possui os dois valores:
+        /// 0 - Debito
+        /// 1 - Credito
+        /// </summary>
+        /// <param name="transacao"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public async Task<FluxoCaixaConsolidadoDto> GetConsolidadoDiario(string data)
         { 
             var dbResult = await _transacaoRepository.GetConsolidadoDiarioAsync(DateTime.Parse(data));
@@ -34,7 +49,15 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             };
         }
 
-         
+         /// <summary>
+         /// Método responsável por toda transação do fluxo de caixa
+         /// A princípio a propriedade TipoTransacao possui os dois valores:
+         /// 0 - Debito
+         /// 1 - Credito
+         /// </summary>
+         /// <param name="transacao"></param>
+         /// <returns></returns>
+         /// <exception cref="ArgumentNullException"></exception>
         public async Task<bool> SetTransacaoFluxoCaixa(TransacaoDto transacao)
         {
             if (transacao == null)

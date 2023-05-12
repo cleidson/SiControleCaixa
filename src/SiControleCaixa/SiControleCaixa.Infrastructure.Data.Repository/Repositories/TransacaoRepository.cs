@@ -13,27 +13,8 @@ namespace SiControleCaixa.Infrastructure.Data.Repository.Repositories
     public class TransacaoRepository : BaseRepository<Transacao>, ITransacaoRepository
     {
         protected readonly SiControleCaixaSqlContext _context;
-        public TransacaoRepository(SiControleCaixaSqlContext context) : base(context)
-        {
-            _context = context;
-        }
-
-        public async Task<List<Transacao>> GetConsolidadoDiarioAsync(DateTime? data)
-        {
-           return await _context.Transacoes.Where(t=>t.DataTransacao.Equals(data)).ToListAsync();
-        }
-
-        public async Task<bool> InsertTransacaoAsync(Transacao transacao)
-        {
-            try
-            {
-                return Add(transacao);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
+        public TransacaoRepository(SiControleCaixaSqlContext context) : base(context)=> _context = context;
+        public async Task<List<Transacao>> GetConsolidadoDiarioAsync(DateTime? data) => await _context.Transacoes.Where(t => t.DataTransacao.Equals(data)).ToListAsync();
+        public async Task<bool> InsertTransacaoAsync(Transacao transacao) => await AddAsync(transacao);
     }
 }

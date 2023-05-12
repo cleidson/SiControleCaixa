@@ -14,8 +14,6 @@ builder.Services.AddSwaggerGen();
 
 Startup.RegisterServices(builder.Services);
 
-
-
 var connectionString = builder.Configuration.GetConnectionString("SiControleCaixaConnection");
 
 builder.Services.AddDbContext<SiControleCaixaSqlContext>(x => x.UseSqlServer(connectionString));

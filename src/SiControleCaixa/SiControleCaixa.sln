@@ -15,15 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2-Web", "1.2-Web", "{C58B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiControleCaixa.ApplicationCore.IoC", "SiControleCaixa.Core.IoC\SiControleCaixa.ApplicationCore.IoC.csproj", "{30DC9A58-54A7-4A20-90C6-C25C0292CD64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiControleCaixa.Application.NET7.WebApi", "SiControleCaixa.Application.NET7.WebApi\SiControleCaixa.Application.NET7.WebApi.csproj", "{0801B393-2760-4EAB-B951-5DA173F090B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiControleCaixa.Application.NET7.WebApi", "SiControleCaixa.Application.NET7.WebApi\SiControleCaixa.Application.NET7.WebApi.csproj", "{0801B393-2760-4EAB-B951-5DA173F090B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiControleCaixa.ApplicationCore.BusinessServices", "SiControleCaixa.ApplicationCore.BusinessServices\SiControleCaixa.ApplicationCore.BusinessServices.csproj", "{6B1DA22B-34A8-4571-A422-F21A19C61E28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiControleCaixa.ApplicationCore.BusinessServices", "SiControleCaixa.ApplicationCore.BusinessServices\SiControleCaixa.ApplicationCore.BusinessServices.csproj", "{6B1DA22B-34A8-4571-A422-F21A19C61E28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiControleCaixa.ApplicationCore.DTO", "SiControleCaixa.ApplicationCore.DTO\SiControleCaixa.ApplicationCore.DTO.csproj", "{0D3A0138-ECDB-4CD6-84D3-C4D8C3B615D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiControleCaixa.ApplicationCore.DTO", "SiControleCaixa.ApplicationCore.DTO\SiControleCaixa.ApplicationCore.DTO.csproj", "{0D3A0138-ECDB-4CD6-84D3-C4D8C3B615D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiControleCaixa.Infrastructure.Data", "SiControleCaixa.Infrastructure.Data\SiControleCaixa.Infrastructure.Data.csproj", "{0F827B4F-1D3C-471C-A55D-A3E35DCE8243}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiControleCaixa.Infrastructure.Data", "SiControleCaixa.Infrastructure.Data\SiControleCaixa.Infrastructure.Data.csproj", "{0F827B4F-1D3C-471C-A55D-A3E35DCE8243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiControleCaixa.Infrastructure.Data.Repository", "SiControleCaixa.Infrastructure.Data.Repository\SiControleCaixa.Infrastructure.Data.Repository.csproj", "{C673A0E5-E6E8-424C-A01C-462328046F1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiControleCaixa.Infrastructure.Data.Repository", "SiControleCaixa.Infrastructure.Data.Repository\SiControleCaixa.Infrastructure.Data.Repository.csproj", "{C673A0E5-E6E8-424C-A01C-462328046F1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiControleCaixa.Application.NET7.Tests", "SiControleCaixa.Application.NET7.Tests\SiControleCaixa.Application.NET7.Tests.csproj", "{7C42A382-0FC0-4DF2-8B69-F0172B963D6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{C673A0E5-E6E8-424C-A01C-462328046F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C673A0E5-E6E8-424C-A01C-462328046F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C673A0E5-E6E8-424C-A01C-462328046F1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C42A382-0FC0-4DF2-8B69-F0172B963D6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C42A382-0FC0-4DF2-8B69-F0172B963D6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C42A382-0FC0-4DF2-8B69-F0172B963D6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C42A382-0FC0-4DF2-8B69-F0172B963D6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{0D3A0138-ECDB-4CD6-84D3-C4D8C3B615D8} = {2BC770DB-B496-4B54-8ADD-882D0BD01DB2}
 		{0F827B4F-1D3C-471C-A55D-A3E35DCE8243} = {B686D0BA-1874-46B5-B682-7C1FDC4AAFED}
 		{C673A0E5-E6E8-424C-A01C-462328046F1F} = {B686D0BA-1874-46B5-B682-7C1FDC4AAFED}
+		{7C42A382-0FC0-4DF2-8B69-F0172B963D6D} = {1005B8E5-86B5-49CB-8816-A24B4D225E2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C87A3FA-A26E-4A85-81A9-2A915BFBC23F}
