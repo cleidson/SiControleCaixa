@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SiControleCaixa.ApplicationCore.DTO\SiControleCaixa.ApplicationCore.DTO.csproj" />
+    <ProjectReference Include="..\SiControleCaixa.Infrastructure.Data.Repository\SiControleCaixa.Infrastructure.Data.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
