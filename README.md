@@ -35,7 +35,7 @@ A arquitetura utilizada neste projeto consiste em três camadas:
  
    > :memo: <strong>Observação:</strong> No projeto SiControleCaixa.Infrastructure.Data, será desacoplado futuramente, separando toda parte de configuração, <i>migration</i> e contexto. Sendo criado futuramente o projeto SiControleCaixa.Infrastructure.Data.SqlServer, onde armazenará toda configuração referente ao banco de dados Microsoft Sql Server. 
     
-    > Dessa forma, o ganho se dará no desacoplamento das entidades, podendo ser reaproveitado em outras configurações de outros bancos, trabalhando com contextos diferentes.
+   > Dessa forma, o ganho se dará no desacoplamento das entidades, podendo ser reaproveitado em outras configurações de outros bancos, trabalhando com contextos diferentes.
 
  
 
