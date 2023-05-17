@@ -43,7 +43,6 @@ A arquitetura utilizada neste projeto consiste em três camadas:
 - O atributo referente ao <strong>Tipo da Transação</strong> é composta pelo seguintes valores, sendo eles:
 
   Valor <strong>0</strong>: Corresponde a transação do tipo <strong>Débito</strong>
-  
   Valor <strong>1</strong>: Corresponde a transação do tipo <strong>Crédito</strong>
   
    <br/>
