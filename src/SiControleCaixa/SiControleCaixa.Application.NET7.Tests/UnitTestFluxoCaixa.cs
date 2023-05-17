@@ -26,7 +26,7 @@ namespace SiControleCaixa.Application.NET7.Tests
             var cenario01 = new TransacaoDto
             {
                 DataTransacao = "2023-10-12",
-                TipoTransacao = 5,
+                TipoTransacao = 1,
                 Valor = 5
             };
 
@@ -47,7 +47,17 @@ namespace SiControleCaixa.Application.NET7.Tests
                 Valor = 5
             };
 
-            Assert.IsTrue(cenario03.DataTransacao  is null);
+
+            Assert.IsTrue(cenario03.DataTransacao is null);
+
+            var cenario04 = new TransacaoDto
+            {
+                DataTransacao = null,
+                TipoTransacao = 5,
+                Valor = 5
+            };
+
+            Assert.IsTrue(cenario04.TipoTransacao != 0 && cenario04.TipoTransacao != 1);
 
             var result = await transactionServiceDependency.SetTransacaoFluxoCaixa(cenario01);
 

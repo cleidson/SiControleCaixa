@@ -22,6 +22,6 @@ namespace SiControleCaixa.Application.NET7.WebApi.Controllers
 
 
         [HttpPost("lancamento")]
-        public async Task<ActionResult> Post([FromBody] TransacaoDto lancamento) => Ok(_transactionService.SetTransacaoFluxoCaixa(lancamento));
+        public async Task<ActionResult> Post([FromBody] TransacaoDto lancamento) => Ok( await _transactionService.SetTransacaoFluxoCaixa(lancamento));
     }
 }
