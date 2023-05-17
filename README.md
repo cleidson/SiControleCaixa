@@ -41,11 +41,11 @@ A arquitetura utilizada neste projeto consiste em três camadas:
 
 #### Negocial
 - O atributo referente ao <strong>Tipo da Transação</strong> é composta pelo seguintes valores, sendo eles:
-
+   <br/>
   Valor <strong>0</strong>: Corresponde a transação do tipo <strong>Débito</strong>
+   <br/>
   Valor <strong>1</strong>: Corresponde a transação do tipo <strong>Crédito</strong>
   
-   <br/>
    <br/>
 
     > :memo: **Nota:** Caso necessário o tipo de transação poderá ser transformado em um Enum ou uma tabela de Domínio no banco de dados, facilitando a leitura e interpretação de valores. 
