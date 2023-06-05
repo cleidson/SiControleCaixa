@@ -5,18 +5,19 @@ Sistema responsável por gerenciar o fluxo de caixa.
 ```
 Será necessário subir o backup do banco de dados ou rodar o migration.
 ```
+ 
 ### Database 
+> :memo: **Nota:** Caso queria executar o [Passo a passo](https://github.com/cleidson/SiControleCaixa/tree/main/sql/Passo%20a%20Passo) de maneira visual, basta clicar no link [Passo a passo](https://github.com/cleidson/SiControleCaixa/tree/main/sql/Passo%20a%20Passo)
 ```
 Basta abrir o Sql Server management Studio
 > Botão em Databases > Restor Database > indiciar o local do arquivo > selecionar o arquivo (TestArquiteto);
-
-Obs: Basta seguir o  [Passo a Passo](./sql/Passo a Passo)
 
 Após subir o banco de dados, será necessário rodar os seguintes comandos nos arquivos .sql que estão na pasta sql.
 
 createUser.sql // Responsável por criar o usuário da aplicação
 rulesUser.sql
 ```
+
 
 ### Arquitetura 
 
