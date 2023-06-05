@@ -10,6 +10,8 @@ Será necessário subir o backup do banco de dados ou rodar o migration.
 Basta abrir o Sql Server management Studio
 > Botão em Databases > Restor Database > indiciar o local do arquivo > selecionar o arquivo (TestArquiteto);
 
+**Segue o passo a passo em imagens**: sql/Passo a Passo
+
 Após subir o banco de dados, será necessário rodar os seguintes comandos nos arquivos .sql que estão na pasta sql.
 
 createUser.sql // Responsável por criar o usuário da aplicação
