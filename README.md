@@ -7,6 +7,8 @@ Será necessário subir o backup do banco de dados ou rodar o migration.
 ```
  
 ### Database 
+Baixar o arquivo TesteArquiteto dentro da pasta: sql 
+
 > :memo: **Nota:** Caso queria executar o [Passo a passo](https://github.com/cleidson/SiControleCaixa/tree/main/sql/Passo%20a%20Passo) de maneira visual, basta clicar no link [Passo a passo](https://github.com/cleidson/SiControleCaixa/tree/main/sql/Passo%20a%20Passo)
 ```
 Basta abrir o Sql Server management Studio
