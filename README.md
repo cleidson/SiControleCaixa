@@ -10,7 +10,7 @@ Será necessário subir o backup do banco de dados ou rodar o migration.
 Basta abrir o Sql Server management Studio
 > Botão em Databases > Restor Database > indiciar o local do arquivo > selecionar o arquivo (TestArquiteto);
 
-Passo a Passo: [Passo a Passo](/sql/Passo a Passo)
+Obs: Basta seguir o  [Passo a Passo](./sql/Passo a Passo)
 
 Após subir o banco de dados, será necessário rodar os seguintes comandos nos arquivos .sql que estão na pasta sql.
 
