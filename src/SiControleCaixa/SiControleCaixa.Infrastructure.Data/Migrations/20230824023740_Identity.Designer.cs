@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SiControleCaixa.Infrastructure.Data.Context;
 
@@ -11,9 +12,11 @@ using SiControleCaixa.Infrastructure.Data.Context;
 namespace SiControleCaixa.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(SiControleCaixaSqlContext))]
-    partial class SiControleCaixaSqlContextModelSnapshot : ModelSnapshot
+    [Migration("20230824023740_Identity")]
+    partial class Identity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

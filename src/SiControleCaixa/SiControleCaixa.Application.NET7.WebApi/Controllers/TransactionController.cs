@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SiControleCaixa.ApplicationCore.BusinessServices.Interfaces;
 using SiControleCaixa.ApplicationCore.DTO.Transacao;
 
@@ -6,6 +7,7 @@ namespace SiControleCaixa.Application.NET7.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TransactionController : ControllerBase
     {
         private readonly ILogger<TransactionController> _logger;
@@ -17,6 +19,7 @@ namespace SiControleCaixa.Application.NET7.WebApi.Controllers
             _transactionService = transactionService;
         }
 
+        [Authorize]
         [HttpGet("consolidado/diario/{data}")]
         public async Task<ActionResult> GetConsolidadoDiario(string data) => Ok(await _transactionService.GetConsolidadoDiario(data));
 

@@ -1,25 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
+﻿using Microsoft.EntityFrameworkCore;
 using SiControleCaixa.Infrastructure.Data.Models;
 using SiControleCaixa.Infrastructure.Data.Mappings;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SiControleCaixa.Infrastructure.Data.Context
 {
 
 
-    public class SiControleCaixaSqlContext : DbContext
+    public class SiControleCaixaSqlContext : IdentityDbContext
     {
-        public SiControleCaixaSqlContext()
-        {
-
-        }
+      
         public SiControleCaixaSqlContext(DbContextOptions<SiControleCaixaSqlContext> options) : base(options)
         {
 
@@ -29,6 +20,7 @@ namespace SiControleCaixa.Infrastructure.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
             modelBuilder.Entity<Transacao>();
             modelBuilder.ApplyConfiguration(new TransacaoEntityTypeConfiguration());
