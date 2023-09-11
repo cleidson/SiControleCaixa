@@ -40,7 +40,7 @@ A arquitetura utilizada neste projeto consiste em três camadas:
     
    > Dessa forma, o ganho se dará no desacoplamento das entidades, podendo ser reaproveitado em outras configurações de outros bancos, trabalhando com contextos diferentes.
 
- 
+ Nota: foi implementado a base para toda autenticação na controller AccountController. Deixando no modo para futuras implementações como **2FA**.
 
 #### Negocial
 - O atributo referente ao <strong>Tipo da Transação</strong> é composta pelo seguintes valores, sendo eles:
