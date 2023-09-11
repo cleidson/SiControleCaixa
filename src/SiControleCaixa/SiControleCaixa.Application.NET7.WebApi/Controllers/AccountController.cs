@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using SiControleCaixa.ApplicationCore.BusinessServices.Interfaces;
 using SiControleCaixa.ApplicationCore.DTO.Account;
@@ -36,17 +37,17 @@ namespace SiControleCaixa.Application.NET7.WebApi.Controllers
 
 
         [HttpPost("Login")]
-        public async Task<string> Login(AccountDto credentials)
+        public async Task<ActionResult> Login(AccountDto credentials)
         {
             if (credentials == null)
             {
-                throw new ArgumentNullException("Login credentials");
+                return  BadRequest("Login credentials");
             }
             if (await _accountService.Login(credentials))
             {
-                return await _accountService.GenerateTokenString(credentials.UserName, _config);
+                return Ok(await _accountService.GenerateTokenString(credentials.UserName, _config));
             }
-            return null;
+            return BadRequest();
         }
 
     }

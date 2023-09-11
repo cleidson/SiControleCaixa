@@ -19,10 +19,12 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
 {
     public class AccountService : IAccountService
     {
+        // SOLID: Dependency Injection (D)
         protected readonly UserManager<IdentityUser> _userManager;
         protected readonly RoleManager<IdentityRole> _roleManager;
         protected readonly IHttpContextAccessor _httpContext;
 
+        // SOLID: Constructor Injection (D)
         public AccountService(
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
@@ -33,6 +35,9 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             _httpContext = httpContext;
         }
 
+
+        // SOLID: Single Responsibility Principle (S)
+        // Login método lida apenas com o processo de autenticação do usuário
         public async Task<bool> Login(AccountDto credentials)
         {
             var user = await _userManager.FindByNameAsync(credentials.UserName);
@@ -43,6 +48,8 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             return false;
         }
 
+        // SOLID: Single Responsibility Principle (S)
+        // O método RegisterAccount lida apenas com o processo de registro do usuário
         public async Task<bool> RegisterAccount(AccountDto user)
         {
             var identityUser = new IdentityUser
@@ -55,11 +62,13 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             return result.Succeeded;
         }
 
+        // SOLID: Single Responsibility Principle (S)
         public async Task Logout()
         {
             await _httpContext.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
+        // SOLID: Single Responsibility Principle (S)
         public async Task GenerateCookieAuthentication(string username)
         {
             var claims = await GetClaims(username);
@@ -70,6 +79,7 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             _httpContext.HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, pricipal);
         }
 
+        // SOLID: Single Responsibility Principle (S)
         public async Task<bool> AddUserClaim(string user, Claim claim)
         {
             var identityUser = await _userManager.FindByNameAsync(user);
@@ -82,6 +92,7 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             return result.Succeeded;
         }
 
+        // SOLID: Single Responsibility Principle (S)
         private async Task<List<Claim>> GetClaims(string username)
         {
             var user = await _userManager.FindByNameAsync(username);
@@ -105,6 +116,7 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             return claims;
         }
 
+        // SOLID: Single Responsibility Principle (S)
         private List<Claim> GetClaimsSeperated(IList<Claim> claims)
         {
             var result = new List<Claim>();
@@ -116,6 +128,7 @@ namespace SiControleCaixa.ApplicationCore.BusinessServices.Services
             return result;
         }
 
+        // SOLID: Single Responsibility Principle (S)
         public async Task<string> GenerateTokenString(string user, JwtConfiguration jwtConfig)
         {
             var claims = await GetClaims(user);
